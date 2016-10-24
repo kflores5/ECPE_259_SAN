@@ -9,9 +9,12 @@ int main(void){
 	while(1){
 		data = uartRead();
 		if (data == 'K'){
-			uartWrite(getAdcVal0(),'a');
-			uartWrite(getAdcVal1(),'b');
-			uartWrite(getAdcVal2(),'c');
+			GPIO_PORTB_DATA_R |= (1<<2);
+			uartWrite(getAdcVal0());
+			uartWrite(getAdcVal1());
+			uartWrite(getAdcVal2());
+			uartWrite(getAdcVal3());
 		}
+		GPIO_PORTB_DATA_R &= ~(1<<2);
 	}
 }

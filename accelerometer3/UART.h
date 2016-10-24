@@ -10,5 +10,5 @@
 #include "inc/hw_sysctl.h"
 
 void uartInit(void);
-void uartWrite(uint16_t, char);
+void uartWrite(uint16_t);
 int32_t uartRead();
